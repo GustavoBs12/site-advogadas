@@ -1,110 +1,169 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+  --cor-principal: #1B3A3A;
+  --cor-fundo: #FAF7F2;
+  --cor-destaque: #B8935F;
+  --cor-texto: #2B2B2B;
+  --cor-texto-suave: #6B7280;
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-texto: 'Inter', sans-serif;
 }
 
-header{
-    background-color: #1a2b40;
-    color:  #ffffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+}
+
+/* Header e navegação */
+header {
+  background-color: var(--cor-principal);
+  color: #ffffff;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
 }
 
 nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .monograma {
+  background-color: var(--cor-destaque);
+  color: var(--cor-principal);
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 nav .menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  list-style: none;
+  display: flex;
+  gap: 36px;
 }
 
 nav .menu a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
 }
 
 nav .menu a:hover {
-    text-decoration: underline;
+  border-bottom: 2px solid var(--cor-destaque);
 }
 
+/* Banner */
 .banner {
-    text-align: center;
-    padding: 100px 20px;
+  text-align: left;
+  padding: 140px 48px;
+  max-width: 700px;
 }
 
 .banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .banner p {
-    font-size: 1.2rem;
-   color: #d0d5dc;
+  font-size: 1.15rem;
+  color: #d8dcd9;
+  border-left: 3px solid var(--cor-destaque);
+  padding-left: 16px;
 }
 
+/* Sobre e Áreas */
 .sobre, .areas {
-  padding: 60px 40px;
-  text-align: center;
+  padding: 80px 48px;
 }
 
 .sobre h2, .areas h2 {
-  font-size: 2rem;
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  color: var(--cor-principal);
+}
+
+.sobre h2::after, .areas h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--cor-destaque);
+  margin-top: 14px;
   margin-bottom: 40px;
-  color: #1a2b40;
 }
 
 .advogadas, .cards-areas {
   display: flex;
-  justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
 
 .advogada, .card-area {
-  background-color: #f4f6f9;
-  border-radius: 8px;
-  padding: 25px;
+  background-color: #ffffff;
+  border-left: 4px solid var(--cor-destaque);
+  padding: 28px;
   max-width: 320px;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+
+.advogada:hover, .card-area:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(27, 58, 58, 0.12);
+  border-left-color: var(--cor-principal);
 }
 
 .advogada h3, .card-area h3 {
-  color: #1a2b40;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-principal);
   margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .advogada p, .card-area p {
   font-size: 0.95rem;
-  color: #444444;
-  line-height: 1.5;
+  color: var(--cor-texto-suave);
 }
 
 .areas {
-  background-color: #eef1f5;
+  background-color: #F1EDE6;
 }
 
+/* Contato */
 .contato {
-  padding: 60px 40px;
-  text-align: center;
+  padding: 80px 48px;
   background-color: #ffffff;
+  text-align: center;
 }
 
 .contato h2 {
-  font-size: 2rem;
+  font-size: 2.1rem;
+  color: var(--cor-principal);
   margin-bottom: 30px;
-  color: #1a2b40;
 }
 
 .contato-info {
@@ -115,37 +174,43 @@ nav .menu a:hover {
 
 .contato-info p {
   margin-bottom: 12px;
-  font-size: 1rem;
-  color: #333333;
+  color: var(--cor-texto-suave);
+}
+
+.contato-info strong {
+  color: var(--cor-texto);
 }
 
 .botao-whatsapp {
   display: inline-block;
-  background-color: #25D366;
+  background-color: var(--cor-principal);
   color: #ffffff;
   text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: bold;
+  padding: 16px 36px;
+  font-weight: 600;
   transition: background-color 0.2s;
 }
 
 .botao-whatsapp:hover {
-  background-color: #1ebe5a;
+  background-color: var(--cor-destaque);
+  color: var(--cor-principal);
 }
 
+/* Rodapé */
 footer {
-  background-color: #1a2b40;
-  color: #ffffff;
+  background-color: var(--cor-principal);
+  color: #d8dcd9;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 24px;
+  font-size: 0.85rem;
 }
 
+/* Responsividade */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
     gap: 15px;
+    padding: 24px;
     text-align: center;
   }
 
@@ -155,20 +220,25 @@ footer {
     gap: 15px;
   }
 
-  .banner h1 {
-    font-size: 1.8rem;
+  .banner {
+    padding: 80px 24px;
+    text-align: left;
   }
 
-  .banner p {
-    font-size: 1rem;
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .sobre, .areas, .contato {
+    padding: 50px 24px;
   }
 
   .advogadas, .cards-areas {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .advogada, .card-area {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
