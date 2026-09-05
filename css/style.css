@@ -94,3 +94,50 @@ nav .menu a:hover {
 .areas {
   background-color: #eef1f5;
 }
+
+.contato {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.contato h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1a2b40;
+}
+
+.contato-info {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.contato-info p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.botao-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.botao-whatsapp:hover {
+  background-color: #1ebe5a;
+}
+
+footer {
+  background-color: #1a2b40;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
